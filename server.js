@@ -1,9 +1,18 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import dotenv from "dotenv";
+import dotenv from "dotenv";
+import path from 'path';
+import bodyParser from 'body-parser';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+import userModel from './model/users.js';
+var router = express.Router();
+var user = userModel.find({});
 
+const __dirname = path.dirname(__filename);
 const app = express();
-dotenv.config();
+dotenv.config()
+
 
 
 
